@@ -8,9 +8,9 @@ on:
     - cron: '0 18 * * *'
 
 env:
-    airportUrl: ${{secrets.AIRPORTURL}}
-    userPasswd: ${{secrets.USERPASSWD}}
-    userName: ${{secrets.USERNAME}}
+    AIRPORTURL: ${{secrets.AIRPORTURL}}
+    USERPASSWD: ${{secrets.USERPASSWD}}
+    USERNAME: ${{secrets.USERNAME}}
 
 jobs:
   build:
