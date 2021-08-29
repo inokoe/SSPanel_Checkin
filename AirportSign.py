@@ -53,6 +53,7 @@ def airport_passport(number):
     print('real_cookie :')
     print(real_cookie)
     if(msg.status_code == 200):
+        print(msg.text)
         msg = json.loads(msg.text)
         print(msg["msg"])
     else:
@@ -86,6 +87,7 @@ if __name__ == '__main__':
     start_time = time.time()
     for i in range(len(airportUrl)):
         print("\r\nNo."+str(i+1)+" running...")
+        print(airportUrl[i])
         airport_passport(i)
-        end_time = time.time() - start_time
-        print('\r\nALL LINK DONE:', end_time)
+    end_time = time.time() - start_time
+    print('\r\nALL LINK DONE:', end_time)
