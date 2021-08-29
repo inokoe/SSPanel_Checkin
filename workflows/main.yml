@@ -19,8 +19,7 @@ jobs:
       - name: Checkout private tools
         uses: actions/checkout@v2
         with:
-          repository: inokoe/vpn_sign
-          token: ${{ secrets.token }}
+          repository: inokoe/SSPanel_Checkin
           path: my-tools
       - name: Setup Python
         uses: actions/setup-python@v2
