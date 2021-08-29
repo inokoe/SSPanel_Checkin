@@ -68,16 +68,15 @@ def airport_passport(number):
                     s = s[s.find('%')+1:]
                 temp = s.find('GB')
                 if temp > 0:
-                    s = s[0:temp+1].replace('剩余流量', '').strip()
-                    s = '剩余流量:' + s
-                    push += url[0:count_posA]
-                    push += " | "
-                    push += s
+                    push = s[0:temp+1].replace('剩余流量', '').strip()
+                    push = '剩余流量:' + push
+                    #push += url[0:count_posA]
+                    #push += " | "
+                    #push += s
                 else:
                     push += '小于1G'
                 break
         print(push)
-        push = ''
         print("No."+str(number + 1) + ' SUCCESS')
     except:
         print('failure')
