@@ -7,6 +7,10 @@ on:
   schedule:
     - cron: '0 18 * * *'
 
+env:
+    airportUrl: ${{secrets.AIRPORTURL}}
+    userPasswd: ${{secrets.USERPASSWD}}
+    userName: ${{secrets.USERNAME}}
 
 jobs:
   build:
@@ -16,18 +20,9 @@ jobs:
         uses: actions/checkout@master
         with:
           ref: main
-      - name: Checkout private tools
-        uses: actions/checkout@v2
-        with:
-          repository: inokoe/SSPanel_Checkin
-          path: my-tools
       - name: Setup Python
         uses: actions/setup-python@v2
       - name: Install
         run: pip install requests beautifulsoup4
       - name: run
         run: python AirportSign.py
-        env:
-            airportUrl: ${{secrets.AIRPORTURL}}
-            userPasswd: ${{secrets.USERPASSWD}}
-            userName: ${{secrets.USERNAME}}
