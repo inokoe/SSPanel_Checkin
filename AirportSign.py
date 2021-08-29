@@ -18,6 +18,8 @@ headers = {
 }
 
 airportUrl = os.environ["AIRPORTURL"]
+print(airportUrl)
+print('1++')
 userPasswd = os.environ["USERPASSWD"]
 userName = os.environ["USERNAME"]
 
