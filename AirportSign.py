@@ -17,11 +17,9 @@ headers = {
     'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
 }
 
-airportUrl = os.environ["AIRPORTURL"]
-print(airportUrl)
-print('1++')
-userPasswd = os.environ["USERPASSWD"]
-userName = os.environ["USERNAME"]
+airportUrl = os.environ["AIRPORTURL"].split('&&')
+userPasswd = os.environ["USERPASSWD"].split('&&')
+userName = os.environ["USERNAME"].split('&&')
 
 
 def airport_passport(number):
