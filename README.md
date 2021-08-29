@@ -1,4 +1,6 @@
 # SSPanel_Checkin
+[![SSPanel_Checkin](https://github.com/inokoe/SSPanel_Checkin/actions/workflows/main.yml/badge.svg)](https://github.com/inokoe/SSPanel_Checkin/actions/workflows/main.yml)
+
  GitHub action for sspanel automatically checks in to get free traffic quota
  
  这是一个用于GitHub action 的 sspanel 自动签到的菜鸡脚本
@@ -22,3 +24,4 @@ AIRPORTUR https://github.com&&https://github.com
 USERNAME 123&&123
 
 USERPASSWD 456&&456
+
