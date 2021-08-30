@@ -20,12 +20,16 @@ It is only applicable when there is no verification code protection and cloudfla
 # Example
 
 AIRPORTUR https://github.com
+
 USERNAME 123
+
 USERPASSWD 456
 
 OR
 
 AIRPORTUR https://github.com&&https://github.com
+
 USERNAME 123&&123
+
 USERPASSWD 456&&456
 
