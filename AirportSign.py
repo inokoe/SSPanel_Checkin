@@ -50,8 +50,6 @@ def airport_passport(number):
         real_cookie += key + '=' + cookies.get(key) + ';'
     headers['cookie'] = real_cookie
     msg = requests.post(url, headers=headers)
-    print('real_cookie :')
-    print(real_cookie)
     if(msg.status_code == 200):
         msg = json.loads(msg.text)
         print(msg["msg"])
