@@ -9,11 +9,11 @@ It is only applicable when there is no verification code protection and cloudfla
  
 # How to use
 
- Add secrets
+ Fork, start action and set secrets
  
  在Secrets中增加
 
- AIRPORTUR、USERNAME、USERPASSWD
+ AIRPORTURL、USERNAME、USERPASSWD
 
  spilt with &&
  
