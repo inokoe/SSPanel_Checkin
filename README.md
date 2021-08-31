@@ -10,16 +10,18 @@ It is only applicable when there is no verification code protection and cloudfla
 # How to use
 
  Add secrets
+ 
  在Secrets中增加
 
  AIRPORTUR、USERNAME、USERPASSWD
 
  spilt with &&
+ 
  以&&作为分割
 
 # Example
 
-AIRPORTUR https://github.com
+AIRPORTURL https://github.com
 
 USERNAME 123
 
@@ -27,7 +29,7 @@ USERPASSWD 456
 
 OR
 
-AIRPORTUR https://github.com&&https://github.com
+AIRPORTURL https://github.com&&https://github.com
 
 USERNAME 123&&123
 
