@@ -9,29 +9,36 @@ It is only applicable when there is no verification code protection and cloudfla
  
 # How to use
 
- Fork, start action and set secrets
+ First,Fork, set secrets [AIRPORTURL] [USERNAME] [USERPASSWD]  
+ Then start action file.  
+ If your secrets is right , the action will running successful.  
+ And Multi URL split with &&.
  
- 在Secrets中增加
+ 首先，您需要Fork , 并在Secrets中增加 [AIRPORTURL] [USERNAME] [USERPASSWD] 三个值。  
+ 最后启用Action files,如果Secrets设置正确的值，脚本将会正常运行。  
+ 支持多个机场签到，多个值使用&&分割。  
 
- AIRPORTURL、USERNAME、USERPASSWD
-
- spilt with &&
- 
- 以&&作为分割
 
 # Example
 
 AIRPORTURL https://github.com
 
-USERNAME 123
+USERNAME LoginName
 
-USERPASSWD 456
+USERPASSWD LoginPassword
 
 OR
 
 AIRPORTURL https://github.com&&https://github.com
 
-USERNAME 123&&123
+USERNAME LoginNameA&&LoginNameB
 
-USERPASSWD 456&&456
+USERPASSWD LoginPasswordA&&LoginPasswordB
 
+This use case shows that AIRPORTURL[0] USERNAME[0] USERPASSWD[0] these three attributes are a set of Web Login data.  
+Note that the URL must be a string with HTTP (HTTPS), such as https://github.com , he must end with a domain name
+
+此用例显示 AIRPORTURL[0] USERNAME[0] USERPASSWD[0] 这三个属性是一组Web登录数据。  
+注意，URL必须是一个带Http（Https）的字符串，如https://github.com，他必须以域名结尾。  
+# IMAGE
+![image](https://user-images.githubusercontent.com/45820630/133551741-f836b3f8-b9f5-42c5-bb41-c09f4dcb7f59.png)
