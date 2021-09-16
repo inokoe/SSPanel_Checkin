@@ -1,4 +1,4 @@
-# SSPanel_Checkin
+## SSPanel_Checkin
 [![SSPanel_Checkin](https://github.com/inokoe/SSPanel_Checkin/actions/workflows/main.yml/badge.svg)](https://github.com/inokoe/SSPanel_Checkin/actions/workflows/main.yml)
 
 This is a dish chicken script for automatic check-in of sspanel for GitHub action,
@@ -7,7 +7,7 @@ It is only applicable when there is no verification code protection and cloudfla
 这是一个用于GitHub action 的 sspanel 自动签到的菜鸡脚本,
 仅仅适用于没有验证码保护，没有cloudflare保护的情况下，没有做更完善的异常处理和推送。
  
-# How to use
+## How to use
 
  First,Fork, set secrets [AIRPORTURL] [USERNAME] [USERPASSWD]  
  Then start action file.  
@@ -19,7 +19,7 @@ It is only applicable when there is no verification code protection and cloudfla
  支持多个机场签到，多个值使用&&分割。  
 
 
-# Example
+## Example
 
 AIRPORTURL https://github.com
 
@@ -40,5 +40,10 @@ Note that the URL must be a string with HTTP (HTTPS), such as https://github.com
 
 此用例显示 AIRPORTURL[0] USERNAME[0] USERPASSWD[0] 这三个属性是一组Web登录数据。  
 注意，URL必须是一个带Http（Https）的字符串，如https://github.com，他必须以域名结尾。  
-# IMAGE
+## IMAGE
 ![image](https://user-images.githubusercontent.com/45820630/133551741-f836b3f8-b9f5-42c5-bb41-c09f4dcb7f59.png)
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/inokoe/SSPanel_Checkin.svg)](https://starchart.cc/inokoe/SSPanel_Checkin)
+
