@@ -51,13 +51,13 @@ def airport_passport(number):
         msg = requests.post(url, headers=headers)
         if(msg.status_code == 200):
             msg = json.loads(msg.text)
-            print('Checkin success')
+            print('Checkin success and the result msg : ', end="")
             print(msg["msg"])
             response = requests.get(url[0:count_posA]+'user', headers=headers)
             soup = BeautifulSoup(response.text, features="html.parser")
             soup = soup.find_all("div")
             try:
-                print('Try to get usage data ...')
+                print('Try to get usage data ... ', end="")
                 for i in soup:
                     if i.text.strip().endswith('GB') | i.text.strip().endswith('MB'):
                         s = i.text.strip().replace('\n', '').replace('\r', '')
