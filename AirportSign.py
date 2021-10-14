@@ -34,7 +34,7 @@ def airport_passport(number):
     if response.status_code == 200:
         headers['referer'] = airportUrl[number] + '/user'
         cookies = response.cookies.get_dict()
-        print('Success login')
+        print('Cookie catch success')
         count_posA = 0
         count_posB = 0
         for i in url:
@@ -48,37 +48,40 @@ def airport_passport(number):
         for key in cookies.keys():
             real_cookie += key + '=' + cookies.get(key) + ';'
         headers['cookie'] = real_cookie
-        msg = requests.post(url, headers=headers)
-        if(msg.status_code == 200):
-            msg = json.loads(msg.text)
-            print('Checkin success and the result msg : ', end="")
-            print(msg["msg"])
-            response = requests.get(url[0:count_posA]+'user', headers=headers)
-            soup = BeautifulSoup(response.text, features="html.parser")
-            soup = soup.find_all("div")
-            try:
-                print('Try to get usage data ... ', end="")
-                for i in soup:
-                    if i.text.strip().endswith('GB') | i.text.strip().endswith('MB'):
-                        s = i.text.strip().replace('\n', '').replace('\r', '')
-                        if s.find('%') >= 0:
-                            s = s[s.find('%')+1:]
-                        temp = s.find('GB')
-                        if temp > 0:
-                            push = s[0:temp+1].replace('剩余流量', '').strip()
-                            push = '剩余流量|Usage data:' + push
-                            #push += url[0:count_posA]
-                            #push += " | "
-                            #push += s
-                        else:
-                            push += '小于1G'
-                        break
-                print(push)
-                print("No."+str(number + 1) + ' SUCCESS')
-            except:
-                print('Failed to get usage data' + response.status_code)
-        else:
-            print('Check in failed ' + msg.status_code)
+        try:
+            msg = requests.post(url, headers=headers)
+            if(msg.status_code == 200):
+                msg = json.loads(msg.text)
+                print('Checkin success and the result msg : ', end="")
+                print(msg["msg"])
+                response = requests.get(url[0:count_posA]+'user', headers=headers)
+                soup = BeautifulSoup(response.text, features="html.parser")
+                soup = soup.find_all("div")
+                try:
+                    print('Try to get usage data ... ', end="")
+                    for i in soup:
+                        if i.text.strip().endswith('GB') | i.text.strip().endswith('MB'):
+                            s = i.text.strip().replace('\n', '').replace('\r', '')
+                            if s.find('%') >= 0:
+                                s = s[s.find('%')+1:]
+                            temp = s.find('GB')
+                            if temp > 0:
+                                push = s[0:temp+1].replace('剩余流量', '').strip()
+                                push = '剩余流量|Usage data:' + push
+                                #push += url[0:count_posA]
+                                #push += " | "
+                                #push += s
+                            else:
+                                push += '小于1G'
+                            break
+                    print(push)
+                    print("No."+str(number + 1) + ' SUCCESS')
+                except:
+                    print('Failed to get usage data' + response.status_code)
+            else:
+                print('Check in failed ' + msg.status_code)
+        except:
+            print('Check in failed ')
     else:
         print('Login failed ' + response.status_code)
 
